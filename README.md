@@ -20,7 +20,7 @@ MADAF (Modular and Dynamic Application Framework) is an open-source and plugin-b
 
 You can install MADAF through 2 ways:
 
-### PIP (Pip Installs Packages) <a id="pip"></a>
+#### PIP (Pip Installs Packages): <a id="pip"></a>
 
 PIP is the official Python package manager, you can easily install PIP by using this method:
 
@@ -28,7 +28,7 @@ PIP is the official Python package manager, you can easily install PIP by using 
 pip install madaf
 ```
 
-### Building from Source <a id="source"></a>
+#### Building from Source: <a id="source"></a>
 
 First of all, make sure that you already install Git.
 
@@ -48,13 +48,13 @@ For Windows system via PowerShell:
 > ./install-for-win.sh
 ```
 
-## Usage <a id="usage"></a>
+## Usage: <a id="usage"></a>
 
 MADAF only supports Python 3.6 and above. So for those of you who use Python 2, you have to upgrade to Python 3.6 and above. We recommend you the latest version of Python. MADAF is plugin-based, but several features are bundled in. Such as hot-reloading and built-in WSGI servers and routing.
 
 To use MADAF, follow the documentation. Go to the part of this document called 'links' to see the documentation.
 
-## Links <a id="links"></a>
+## Links: <a id="links"></a>
 
 - [Repository.](https://github.com/project-madaf/)
 - [Documentation.](https://madaf.readthedocs.io)
