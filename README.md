@@ -35,17 +35,17 @@ First of all, make sure that you already install Git.
 For NIX system (Linux, Mac OS, BSD, Solaris, UNIX) via Bash:
 
 ```bash
-git clone https://github.com/project-madaf/source.git
-cd source
-./install-for-nix.sh
+$ git clone https://github.com/project-madaf/source.git
+$ cd source
+$ ./install-for-nix.sh
 ```
 
 For Windows system via PowerShell:
 
 ```powershell
-git clone https://github.com/project-madaf/source.git
-cd source
-./install-for-win.sh
+> git clone https://github.com/project-madaf/source.git
+> cd source
+> ./install-for-win.sh
 ```
 
 ## Usage <a id="usage"></a>
