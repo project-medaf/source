@@ -20,7 +20,7 @@ MADAF (Modular and Dynamic Application Framework) is an open-source and plugin-b
 
 You can install MADAF through 2 ways:
 
-## PIP (Pip Installs Packages) <a id="pip"></a>
+### PIP (Pip Installs Packages) <a id="pip"></a>
 
 PIP is the official Python package manager, you can easily install PIP by using this method:
 
@@ -28,7 +28,7 @@ PIP is the official Python package manager, you can easily install PIP by using 
 pip install madaf
 ```
 
-## Building from Source <a id="source"></a>
+### Building from Source <a id="source"></a>
 
 First of all, make sure that you already install Git.
 
