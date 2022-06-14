@@ -58,4 +58,3 @@ To use MADAF, follow the documentation. Go to the part of this document called '
 
 - [Repository.](https://github.com/project-madaf/)
 - [Documentation.](https://madaf.readthedocs.io)
-```
