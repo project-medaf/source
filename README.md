@@ -1,5 +1,5 @@
 <div align="center" style="display : flex; justify-content : center;">
-  <h1>Project MADAF</h1>
+  <h1>MADAF</h1>
 </div>
 
 ## About: <a id="about"></a>
