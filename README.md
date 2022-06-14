@@ -11,8 +11,8 @@ MADAF (Modular and Dynamic Application Framework) is an open-source and plugin-b
 1. [About](#about)
 2. [Table of Contents](#contents)
 3. [Installation](#installation)
-   1.[PIP](#pip)
-   2.[Source](#source)
+   - [PIP](#pip)
+   - [Source](#source)
 
 # Installation: <a id="installation"></a>
 
