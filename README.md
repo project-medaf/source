@@ -50,7 +50,7 @@ For Windows system via PowerShell:
 
 ## Usage: <a id="usage"></a>
 
-MADAF only supports Python 3.6 and above. So for those of you who use Python 2, you have to upgrade to Python 3.6 and above. We recommend you the latest version of Python. MADAF is plugin-based, but several features are bundled in. Such as hot-reloading and built-in WSGI servers and routing.
+MADAF only supports Python 3.6 and above. So for those of you who use Python 2, you have to upgrade to Python 3.6 and above. We recommend you the latest version of Python. MADAF is plugin-based, but several features are bundled in. Such as hot-reloading and debug mode.
 
 To use MADAF, follow the documentation. Go to the part of this document called 'links' to see the documentation.
 
