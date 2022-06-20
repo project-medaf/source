@@ -4,7 +4,7 @@ medaf/internal/cli/app.py
 
 Copyright (c) 2022, Anokidev.
 Licensed in MIT License.
-This file is part of MADAF.
+This file is part of medaf.
 
 This is responsible for parsing CLI commands.
 
@@ -12,7 +12,7 @@ This is responsible for parsing CLI commands.
 
 import importlib.util
 
-from madaf.api.config.get import GetRCConfig
+from medaf.api.config.get import GetRCConfig
 
 class App:
 
@@ -30,19 +30,19 @@ class App:
 
         print(f"==> Attempting to create a new app called '{app}'.")
 
-        madafrc: str = f"{cwd}/madarc.py"
+        medafrc: str = f"{cwd}/madarc.py"
 
-        # 1. Import the main function from madafrc.
+        # 1. Import the main function from medafrc.
         # 2. Call the main function.
         # 3. Now, the config should be changed.
 
         print("   -> ")
 
         try:
-            spec = importlib.util.spec_from_file_location("main", madafrc)
-            madafrc_main = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(madafrc_main)
-            madafrc_main()
+            spec = importlib.util.spec_from_file_location("main", medafrc)
+            medafrc_main = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(medafrc_main)
+            medafrc_main()
         except ImportError:
             print(f"==> Failed to create an app called '{app}'.")
             print("")

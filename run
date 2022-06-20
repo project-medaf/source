@@ -6,7 +6,7 @@
 
 Copyright (c) 2022, Anokidev.
 Licensed in MIT License.
-This file is part of MADAF.
+This file is part of medaf.
 
 This file is responsible for being a Python script file
 that is responsible for handling CLI commands.
@@ -16,7 +16,7 @@ that is responsible for handling CLI commands.
 import os
 import sys
 
-from madaf.internal.cli.main import Main
+from medaf.internal.cli.main import Main
 
 if __name__ == '__main__':
     main = Main(sys.argv, os.getcwd())

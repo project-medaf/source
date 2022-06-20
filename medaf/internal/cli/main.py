@@ -4,7 +4,7 @@ medaf/internal/cli/main.py
 
 Copyright (c) 2022, Anokidev.
 Licensed in MIT License.
-This file is part of MADAF.
+This file is part of medaf.
 
 This is responsible for parsing CLI commands.
 
@@ -13,10 +13,10 @@ This is responsible for parsing CLI commands.
 import sys
 import re
 
-from madaf.internal.cli.app import App
-from madaf.internal.cli.depen import Depen
-from madaf.internal.cli.helper import helper
-from madaf.internal.cli.version import version
+from medaf.internal.cli.app import App
+from medaf.internal.cli.depen import Depen
+from medaf.internal.cli.helper import helper
+from medaf.internal.cli.version import version
 
 class Main:
 
@@ -99,7 +99,7 @@ class Main:
                 app_manager.remove(cwd, app)
             else:
                 print("Error: Unknown subcommand.")
-                print("Run 'madaf --help' for more info.")
+                print("Run 'medaf --help' for more info.")
                 sys.exit(1)
 
 
@@ -114,7 +114,7 @@ class Main:
                 pass
             else:
                 print("Error: Unknown subcommand.")
-                print("Run 'madaf --help' for more info.")
+                print("Run 'medaf --help' for more info.")
                 sys.exit(1)
 
         # 'help' command. Show command lists.
@@ -122,7 +122,7 @@ class Main:
             print(helper)
             sys.exit(0)
 
-        # 'version' command. Show the current version of MADAF.
+        # 'version' command. Show the current version of medaf.
         elif command in ('version', '--version', '-v'):
             print(version)
             sys.exit(0)
@@ -130,5 +130,5 @@ class Main:
         # Invalid command.
         else:
             print(f"Error: Invalid command '{command}'")
-            print("Type 'madaf --help' for more info.")
+            print("Type 'medaf --help' for more info.")
             sys.exit(1)
