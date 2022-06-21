@@ -28,6 +28,10 @@ class Main:
 
         '''Create some attributes.'''
 
+        print("\nMEDAF version 0.0.0a1.")
+        print("Copyright (c) 2022 Project MEDAF.")
+        print("Licensed in MIT License.\n")
+
         self.__cwd: str         = ""
         self.__command: str     = ""
         self.__subcommand: str  = ""
@@ -38,8 +42,6 @@ class Main:
         self.__depen_manager    = Depen()
 
     def __call__(self, args: list, cwd: str) -> None:
-
-        print("")
 
         self.__cwd: str = cwd
 

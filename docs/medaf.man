@@ -1,11 +1,11 @@
 .\"
 .\" ./docs/medaf.man
 .\" 
-.\" Copyright (c) 2022, Anokidev.
+.\" Copyright (c) 2022, Project MEDAF.
 .\" Licensed in MIT License.
 .\" 
-.\" This file is part of medaf documentation and UNIX manual page.
-.\" This file is used as medaf command line utility UNIX manual (man) page.
+.\" This file is part of MEDAF documentation and UNIX manual page.
+.\" This file is used as MEDAF command line utility UNIX manual (man) page.
 .\" 
 
 .TH man 1 "18 June 2022" "0.0.0a1" "medaf man page"
@@ -47,14 +47,14 @@ There are several commands that you can use for your own needs.
 .SS medaf app | medaf -a
 Manage your apps using this command.
 
-- medaf new [app_name] --config=[config]
+- medaf app new [app_name]
 .br
-This command will create a new app that is specified by the [app_name]. If [config] set to 'false', it will prevent the CLU from creating a configuration folder.
-    
-- medaf run [app_name] --debug=[debug]
+This command will create a new app that is specified by the [app_name].
+
+- medaf app run [app_id] --debug_mode=[debug_mode]
 .br
-This command will run an app that is specified by the [app_name]. Any [debug] value will override the debug value in the apps configuration.
-    
+This command will run an app. --debug_mode will override the debug values.
+
 - medaf app remove [app_name]
 .br
 This command will remove an app that is specified by the [app_name]. Note that installed apps config is not updated.

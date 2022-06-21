@@ -10,9 +10,11 @@ This is responsible for parsing CLI commands.
 
 '''
 
+import sys
+import os
 import importlib.util
 
-from medaf.api.config.get import GetRCConfig
+from medaf.internal.config.get import LoadRCConfig
 
 class App:
 
@@ -28,24 +30,10 @@ class App:
 
         '''This command will create a new app.'''
 
-        print(f"==> Attempting to create a new app called '{app}'.")
+        print(": Attempting to load RC configuration.")
 
-        medafrc: str = f"{cwd}/madarc.py"
-
-        # 1. Import the main function from medafrc.
-        # 2. Call the main function.
-        # 3. Now, the config should be changed.
-
-        print("   -> ")
-
-        try:
-            spec = importlib.util.spec_from_file_location("main", medafrc)
-            medafrc_main = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(medafrc_main)
-            medafrc_main()
-        except ImportError:
-            print(f"==> Failed to create an app called '{app}'.")
-            print("")
+        # Load RC c
+        LoadRCConfig.reset()
 
         # Get the Project-Layout config from an app.
         config = GetRCConfig(app)
@@ -56,9 +44,9 @@ class App:
 
         # Get the app_path.
         if root_path == '.':
-            app_path = f"{cwd}/{apps_path}/"
+            app_path: str = f"{cwd}/{apps_path}/"
         else:
-            app_path = f"{cwd}/{root_path}/{apps_path}"
+            app_path: str = f"{cwd}/{root_path}/{apps_path}"
 
         # Create the folder.
 

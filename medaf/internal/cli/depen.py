@@ -4,7 +4,7 @@ medaf/core/cli/main.py
 
 Copyright (c) 2022, Anokidev.
 Licensed in MIT License.
-This file is part of medaf.
+This file is part of MEDAF.
 
 This is responsible for parsing CLI commands.
 

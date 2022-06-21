@@ -12,7 +12,7 @@ This is responsible for parsing CLI commands.
 
 import logging
 
-from medaf.api.config.get import GetAppConfig
+from medaf.api.config.get import GetRCConfig
 
 class Log:
 
@@ -22,8 +22,8 @@ class Log:
 
     def __init__(self, name: str) -> None:
 
-        config = GetAppConfig()
-        debug = config.get['Debug-Mode']
+        config = GetRCConfig()
+        debug = config.get('Debug-Mode')
         self.__name: str = name
 
         if debug is True:
