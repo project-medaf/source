@@ -1,4 +1,4 @@
-# This is Medaf.
+# This is Medaf 0.0.0a1.
 
 Medaf is an open-source app framework that is based on the plugin-oriented architecture. You can use Medaf and some plugin suites to build mobile, desktop, nor web applications easily with some knowledge on Python.
 
@@ -36,6 +36,10 @@ Medaf is going to be plugin-based, meaning that each functionality is going to b
 | -----------|----------------------------------------------------------------------------------|
 | Content    | This type of plugins are the one that are going to create response.              |
 | Middleware | This type of plugins act as a middleware that can modify requests and responses. |
+
+## Documentation:
+
+Documentation for Medaf is available by clicking [here](https://medaf.readthedocs.io).
 
 ## License:
 
