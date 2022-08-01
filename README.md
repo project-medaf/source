@@ -39,7 +39,7 @@ Medaf is going to be plugin-based, meaning that each functionality is going to b
 
 ## License:
 
-Medaf is open-source and is licensed in [MIT License](/LICENSE.md)
+Medaf is open-source and is licensed in [MIT License](/LICENSE.md).
 
 ## Contributing:
 
