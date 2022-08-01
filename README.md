@@ -32,10 +32,10 @@ cd src\script
 
 Medaf is going to be plugin-based, meaning that each functionality is going to be provided by plugins. When creating a new project, you What kind of plugins? Well, this table is going to provide you with information that you need:
 
----
-Type: ['Content', 'Middleware']
-Description: ['This type of plugins are the one that are going to create response.', 'This type of plugins act as a middleware that can modify requests and responses.']
----
+| Type       | Description                                                                      |
+| -----------|----------------------------------------------------------------------------------|
+| Content    | This type of plugins are the one that are going to create response.              |
+| Middleware | This type of plugins act as a middleware that can modify requests and responses. |
 
 ## License:
 
