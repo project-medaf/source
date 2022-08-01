@@ -30,12 +30,13 @@ cd src\script
 
 ## Architecture:
 
-Medaf is going to be plugin-based, meaning that each functionality is going to be provided by plugins. When creating a new project, you What kind of plugins? Well, this table is going to provide you with information that you need:
+Medaf is going to be plugin-based, meaning that each functionality is going to be provided by apps. Note that plugins that you install from PIP is actually an app or a bunch of apps bundled together to form one Python package. What kind of apps you will get? Well, this table is going to provide you with information that you need:
 
-| Type       | Description                                                                      |
-| -----------|----------------------------------------------------------------------------------|
-| Content    | This type of plugins are the one that are going to create response.              |
-| Middleware | This type of plugins act as a middleware that can modify requests and responses. |
+| Type       | Description                                                                           |
+| -----------|---------------------------------------------------------------------------------------|
+| Content    | This type of apps are the one that are going to create response.                      |
+| Middleware | This type of apps act as a middleware that can modify requests and responses.         |
+| Gateway    | This type of apps act as a gateway between Medaf and "the outside world" (WSGI, etc). |
 
 ## Documentation:
 
