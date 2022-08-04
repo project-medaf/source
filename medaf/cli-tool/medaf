@@ -1,0 +1,49 @@
+#!/bin/python3
+
+"""
+
+./local/bin/medaf
+
+-------------------------------
+
+This file is MEDAF's CLI tool. This file will be added into your PATH. Simple as that.
+
+-------------------------------
+
+Copyright (C) 2022, Anokidev. All right reserved. 
+Medaf is licensed in MIT License, see ./LICENSE.md for more info.
+
+"""
+
+HELP = r"""
+Medaf help:
+
+All "commands" are actually apps CLI. There are bundled
+apps such as: project, plugin, help, and version.
+
+Basically:
+
+medaf [APP NAME] [COMMAND NAME] [SUBCOMMAND NAME]
+
+project:
+    - init [PROJECT NAME] : Initialize a new project.
+        - "--template=[TEMPLATE]" : Insert template.
+    - run [APP NAME] : Run an app INSIDE your project.
+        - "--debug=[true, false]" : Enable debug mode.
+
+plugin:
+    - install [PLUGIN NAME] : Install and register a plugin.
+    - remove [PLUGIN NAME] : Remove a plugin.
+
+help / --help / -h:
+    - [NO SUBCOMMAND] : Show this.
+
+version / --version / -v:
+    - [NO SUBCOMMAND] : Show version.
+    - credits : Show credits.
+    - changelogs : Show changelogs.
+    - license : Show license."""
+
+if __name__ == "__main__":
+
+    # First of all,

@@ -37,78 +37,125 @@ from medaf.internal.cli.plugin import Plugin
 from medaf.internal.cli.help import Help
 from medaf.internal.cli.version import Version
 
-HELP = r"""
-Medaf help:
+LICENSE = """
+MIT License
 
-All "commands" are actually apps CLI. There are bundled
-apps such as: project, plugin, help, and version.
+Copyright (c) 2022 Project MEDAF
 
-project:
-    - init [PROJECT_NAME] : Initialize a new project.
-        - "--template=[TEMPLATE]" : Insert template.
-    - run [APP_NAME] : Run an app INSIDE your project.
-        - "--debug=[true, false]" : Enable debug mode.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-plugin:
-    - install [PLUGIN_NAME] : Install and register a plugin.
-    - remove [PLUGIN_NAME] : Remove a plugin.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-help / --help / -h:
-    - [NO_SUBCOMMAND] : Show this.
-
-version / --version / -v:
-    - [NO_SUBCOMMAND] : Show version.
-    - credits : Show credits.
-    - changelogs : Show changelogs."""
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE."""
 
 class Parser:
 
-    def __init__(self):
+    def __init__(self) -> None:
         pass
 
-    def __call__(self, args: list, apps: list):
+    # Parse commands.
+    def __call__(self, args: list, apps: list) -> None:
 
+        """Parse commands.
+        
+        @param args: list
+            This contains the already parsed CLI commands.
+
+        @param apps: list
+            This contains the list of apps. Not including:
+            - project
+            - plugin
+            - help
+            - version
+
+        @return None
+
+        """
+
+        # Check if an app if specified.
         try:
-            app: str        = args[0]
+            app: str = args[0]
         except IndexError:
-            print("ERROR: No apps specfied.")
+            print("ERROR: No apps are specified.")
             print("Type 'medaf --help' for more info.")
             sys.exit(1)
 
+        # Check if a command is specified.
         try:
             command: str = args[1]
         except IndexError:
             command: str = None
 
+        # Check if a subcommand or it's flags are specified.
         try:
-            additional: str = args[2:]
+            subcommand: list = args[2:]
         except IndexError:
-            additional: str = None
+            subcommand: list = None
 
-        apps.append(HELP)
+        # Add HELP to the apps list. Index 0.
+        apps: list = HELP + apps
 
         if (app == "project"):
             project = Project()
-            project(command, additional)
+            project(command, subcommand)
         elif (app == "plugin"):
             plugin = Plugin()
-            plugin(command, additional)
+            plugin(command, subcommand)
         elif (app == "help"):
-            self.__help(apps)
+            self.__help_app(apps)
         elif (app == "version"):
-            self.__version(command)
+            self.__version_app(command)
         else:
             pass
 
-    
-    def __help(self, apps: list):
+    # Help app.
+    def __help_app(self, apps: list) -> None:
 
+        """Help app.
+        
+        @param args: list
+            This contains apps help list.
+
+        @return None
+           
+        """
+
+        # Print every single apps.
         for i in apps:
+            
             sys.stdout.write(i)
             sys.stdout.write("\n")
 
-    def __version(command):
+    # Version app.
+    def __version_app(command) -> None:
 
         if (command == None):
-            print("Medaf version 0.0.0a1")
-        
+            print("\nMedaf version 0.0.0a1")
+            sys.exit(0)
+        elif (command == "credits"):
+            print("\nMedaf credits:")
+            print("Created and developed by Anokidev.")
+            sys.exit(0)
+        elif (command == "changelogs"):
+            print("\nMedaf changelongs:")
+            print("- Implemented the plugin  and CLI system.")
+            sys.exit(0)
+        elif (command == "license"):
+            print(LICENSE)
+            sys.exit(0)
+        else:
+            print(f"ERROR: Unknown command {command}.")
+            sys.exit(1)
+            
