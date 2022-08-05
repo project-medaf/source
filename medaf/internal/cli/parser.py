@@ -1,6 +1,6 @@
 """
 
-./internal/cli/parser.py
+./medaf/internal/cli/parser.py
 
 -------------------------------
 

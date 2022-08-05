@@ -2,7 +2,7 @@
 
 """
 
-./local/bin/medaf
+local/bin/medaf
 
 -------------------------------
 
@@ -14,6 +14,9 @@ Copyright (C) 2022, Anokidev. All right reserved.
 Medaf is licensed in MIT License, see ./LICENSE.md for more info.
 
 """
+
+import sys
+import importlib
 
 HELP = r"""
 Medaf help:
@@ -46,4 +49,6 @@ version / --version / -v:
 
 if __name__ == "__main__":
 
-    # First of all,
+    # Arguments
+    args = sys.argv[1:]
+
