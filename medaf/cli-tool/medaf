@@ -16,7 +16,8 @@ Medaf is licensed in MIT License, see ./LICENSE.md for more info.
 """
 
 import sys
-import importlib
+import os
+import importlib.util
 
 HELP = r"""
 Medaf help:
@@ -49,6 +50,19 @@ version / --version / -v:
 
 if __name__ == "__main__":
 
-    # Arguments
-    args = sys.argv[1:]
+    # Arguments.
+    args: list = sys.argv[1:]
+
+    # Import project.py
+    spec = importlib.util.spec_from_file_location("a", f"{os.cwd()}/project.py")
+    project_config = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(project_config)
+    
+    # Get all the configurations.
+    local_content_apps: dict    = project_config.LOCAL_CONTENT_APPS
+    local_middleware_apps: list = project_config.LOCAL_MIDDLEWARE_APPS
+    local_gateway_apps: list    = project_config.LOCAL_GATEWAY_APPS
+    plugin_apps: dict = project_config.PLUGIN_APPS
+
+
 
