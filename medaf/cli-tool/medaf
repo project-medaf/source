@@ -62,7 +62,7 @@ if __name__ == "__main__":
     local_content_apps: dict    = project_config.LOCAL_CONTENT_APPS
     local_middleware_apps: list = project_config.LOCAL_MIDDLEWARE_APPS
     local_gateway_apps: list    = project_config.LOCAL_GATEWAY_APPS
-    plugin_apps: dict = project_config.PLUGIN_APPS
+    plugin_apps: dict           = project_config.PLUGIN_APPS
 
-
+    # Ge
 

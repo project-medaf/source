@@ -37,8 +37,39 @@ from medaf.internal.cli.plugin import Plugin
 from medaf.internal.cli.help import Help
 from medaf.internal.cli.version import Version
 
-LICENSE = """
-MIT License
+HELP = """
+Medaf help:
+
+All "commands" are actually apps CLI. There are bundled
+apps such as: project, plugin, help, and version.
+
+Basically:
+
+medaf [APP NAME] [COMMAND NAME] [SUBCOMMAND NAME]
+
+project:
+    - init [PROJECT NAME] : Initialize a new project.
+        - "--template=[TEMPLATE]" : Insert template.
+    - run [APP NAME] : Run an app INSIDE your project.
+        - "--debug=[true, false]" : Enable debug mode.
+
+plugin:
+    - install [PLUGIN NAME] : Install and register a plugin.
+    - remove [PLUGIN NAME] : Remove a plugin.
+    - register [PLUGIN_NAME] : Register a plugin.
+    - unregister [PLUGIN_NAME] : Unregister a plugin.
+    - help [PLUGIN_NAME] : Show a plugin's help message, if the help message does exist.
+
+help / --help / -h:
+    - [NO SUBCOMMAND] : Show this.
+
+version / --version / -v:
+    - [NO SUBCOMMAND] : Show version.
+    - credits : Show credits.
+    - changelogs : Show changelogs.
+    - license : Show license."""
+
+LICENSE = """MIT License
 
 Copyright (c) 2022 Project MEDAF
 
@@ -66,7 +97,7 @@ class Parser:
         pass
 
     # Parse commands.
-    def __call__(self, args: list, apps: list) -> None:
+    def __call__(self, args: list, apps_list: list) -> None:
 
         """Parse commands.
         
@@ -114,29 +145,24 @@ class Parser:
             plugin = Plugin()
             plugin(command, subcommand)
         elif (app == "help"):
-            self.__help_app(apps)
+            self.__help_app()
         elif (app == "version"):
             self.__version_app(command)
         else:
             pass
 
     # Help app.
-    def __help_app(self, apps: list) -> None:
+    def __help_app(self) -> None:
 
         """Help app.
-        
-        @param args: list
-            This contains apps help list.
 
         @return None
            
         """
 
         # Print every single apps.
-        for i in apps:
-            
-            sys.stdout.write(i)
-            sys.stdout.write("\n")
+        print(HELP)
+        sys.exit(0)
 
     # Version app.
     def __version_app(command) -> None:
